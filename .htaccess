@@ -1,0 +1,16 @@
+AddHandler php53-cgi .php
+RewriteEngine On
+
+#Redirect to WWW
+RewriteCond %{HTTP_HOST} ^tierbestpreis.de [NC]
+RewriteRule ^(.*)$ http://www.tierbestpreis.de/$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
+
+ExpiresActive On
+ExpiresDefault "access plus 1 week"
+ExpiresByType image/gif A2592000

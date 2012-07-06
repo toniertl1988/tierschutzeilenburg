@@ -1,0 +1,32 @@
+<?php if ($this->pageCount): ?>
+<div class="paginationControl">
+<!-- Vorheriger Seitenlink -->
+<?php if (isset($this->previous)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->previous)); ?>">
+    &lt; Vorher
+  </a> |
+<?php else: ?>
+  <span class="disabled">&lt; Vorher</span> |
+<?php endif; ?>
+ 
+<!-- Anzahl an Seitenlinks -->
+<?php foreach ($this->pagesInRange as $page): ?>
+  <?php if ($page != $this->current): ?>
+    <a href="<?php echo $this->url(array('page' => $page)); ?>">
+      <?php echo $page; ?>
+    </a> |
+  <?php else: ?>
+    <?php echo $page; ?> |
+  <?php endif; ?>
+<?php endforeach; ?>
+ 
+<!-- N�chster Seitenlink -->
+<?php if (isset($this->next)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->next)); ?>">
+    Nächster &gt;
+  </a>
+<?php else: ?>
+  <span class="disabled">Nächster &gt;</span>
+<?php endif; ?>
+</div>
+<?php endif; ?>
