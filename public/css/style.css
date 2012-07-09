@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+	background: #66ee45;
+    font-family: tahoma;
+    font-size: 14px; 
+}
+
+#wrapper {
+	width: 1200px;
+	height: 100%;
+	background: red;
+    margin: auto;
+}
+
+#head {
+	width: 1200px;
+	height: 30px;
+	background: #ddd;
+	margin-top: 30px;
+}
+
+#navlist {
+	width: 1200px;
+	height: 70px;
+	background: #fff;
+}
+
+#headerimagefield {
+	width: 1200px;
+	height: 300px;
+	background: green;
+}
+
+#leftcontent {
+	width: 1000px;
+	height: 200px;
+	background: #fff;
+	float: left;
+}
+
+#rightcontent {
+	width: 200px;
+	height: 200px;
+	background: #ddd;
+	float: right;
+}
