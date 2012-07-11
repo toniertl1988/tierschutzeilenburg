@@ -14,7 +14,22 @@
 	<div id="wrapper">
 		<div id="head"><h5>Eventuell aktuelles Datum / Zeit / Willkommenstext</h5></div>
 		<div id="navlist"><h1>Navigation</h1></div>
-		<div id="headerimagefield"><h3>Titelbild / eventuell &Uuml;berblendeffekte per jQuery</h3></div>
+		<div id="headerborder">
+			<div id="headerimagefield">
+				<div id="slideshow">
+				   <div>
+				     <img src="http://farm6.static.flickr.com/5224/5658667829_2bb7d42a9c_m.jpg" />
+				   </div>
+				   <div>
+				     <img src="http://farm6.static.flickr.com/5230/5638093881_a791e4f819_m.jpg" />
+				   </div>
+				   <div>
+				     Text geht auch. Stark :D
+				   </div>
+			   </div>
+			</div>
+		</div>
+		<div id="headerContentSeparation"></div>
 		<div id="main">
 			<div id="leftcontent">
 					<?php echo $this->layout()->content; ?>
@@ -26,9 +41,23 @@
 	            	<br />
 	            	<hr />
 	            </div>
+	            
+	            <?php echo $this->render('about/phone.phtml', NULL);?>
 			</div>
 		</div>
 	</div>
 <div style="clear: both;"></div>
+<script type="text/javascript">
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);</script>
+
 </body>
 </html>

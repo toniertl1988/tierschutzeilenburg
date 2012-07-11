@@ -6,7 +6,7 @@
 body {
     height: 100%;
     width: 100%;
-	background: #66ee45;
+	background: #a6ee95;
     font-family: tahoma;
     font-size: 14px; 
 }
@@ -14,7 +14,7 @@ body {
 #wrapper {
 	width: 1200px;
 	height: 100%;
-	background: red;
+	background: #fff;
     margin: auto;
 }
 
@@ -32,9 +32,38 @@ body {
 }
 
 #headerimagefield {
-	width: 1200px;
+	width: 1170px;
 	height: 300px;
 	background: green;
+}
+
+#headerborder {
+	width: 1170px;
+	height: 300px;
+	background: #fff; 	
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#slideshow { 
+    position: relative; 
+    width: 1170px; 
+    height: 300px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px; 
+}
+
+#headerContentSeparation {
+	height: 15px;
+	width: 1200px;
+	background: #fff;	
 }
 
 #main {
@@ -46,7 +75,7 @@ body {
 #leftcontent {
 	width: 950px;
 	height: 500px;
-	background: #fff;
+	background: #ededed;
 	float: left;
 	padding: 10px 10px 10px 10px;
 }
@@ -54,7 +83,7 @@ body {
 #rightcontent {
 	width: 210px;
 	height: 500px;
-	background: #ddd;
+	background: #ededed;
 	float: right;
 	padding: 10px 10px 10px 10px;
 }
