@@ -30,7 +30,7 @@
 		</div>
 		<div class="row-fluid">
 			<div class="span9" id="leftcontent">
-				<h4>variabler Hauptcontent</h4>
+				<h4>ADMIN</h4>
 				<?php echo $this -> layout () -> content; ?>
 			</div>
 			<div class="span3" id="rightcontent">
