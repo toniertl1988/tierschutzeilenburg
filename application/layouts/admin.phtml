@@ -9,7 +9,9 @@
     <meta name="language" content="en" />
     <link href="<?php echo $this->baseUrl(); ?>/css/bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="<?php echo $this->baseUrl(); ?>/css/admin.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $this->baseUrl(); ?>/css/jquery.ui.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/js/jquery.ui.min.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -25,20 +27,22 @@
 		<div class="row-fluid">
 			<div class="span2">
 				<div class="well">
-				<span><b>» Main «</b></span><br />
+				<span><b>&raquo; Main &laquo;</b></span><br />
             <a href="<?php echo $this->url(array('module'=>'admin','controller'=>'index','action'=>'index'), null, true);?>">Hauptseite</a><br /><br />
-			<span><b>» Test «</b></span><br />
-			<a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index'), null, true); ?>">verwalten</a><br />
-            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index'), null, true); ?>">hinzufügen</a><br /><br />
-			<span><b>» Test «</b></span><br />
-			<a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index'), null, true); ?>">verwalten</a><br />
-            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index'), null, true); ?>">hinzufügen</a><br /><br />
-            <span><b>» Test «</b></span><br />
-            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index'), null, true); ?>">verwalten</a><br />
-            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index'), null, true); ?>">hinzufügen</a><br /><br />
-            <span><b>» Test «</b></span><br />
-            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index'), null, true);?>">verwalten</a><br />
-            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'index', 'action' => 'index'), null, true);?>">hinzufügen</a><br /><br />
+			<span><b>&raquo; User &laquo;</b></span><br />
+			<a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'user', 'action' => 'index'), null, true); ?>">verwalten</a><br />
+            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'user', 'action' => 'add'), null, true); ?>">hinzuf&uuml;gen</a><br /><br />
+			<span><b>&raquo; Tiere &laquo;</b></span><br />
+			<a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'animals', 'action' => 'index'), null, true); ?>">verwalten</a><br />
+            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'animals', 'action' => 'add'), null, true); ?>">hinzuf&uuml;gen</a><br /><br />
+            <span><b>&raquo; News &laquo;</b></span><br />
+            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'news', 'action' => 'index'), null, true); ?>">verwalten</a><br />
+            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'news', 'action' => 'add'), null, true); ?>">hinzuf&uuml;gen</a><br /><br />
+            <span><b>&raquo; Termine &laquo;</b></span><br />
+            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'dates', 'action' => 'index'), null, true);?>">verwalten</a><br />
+            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'dates', 'action' => 'add'), null, true);?>">hinzuf&uuml;gen</a><br /><br />
+			<span><b>&raquo; G&auml;stebuch &laquo;</b></span><br />
+            <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'guestbook', 'action' => 'index'), null, true);?>">verwalten</a><br /><br />
 			</div>
 			</div>
 			<div class="span10">

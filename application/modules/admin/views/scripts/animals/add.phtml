@@ -1,0 +1,18 @@
+<h2>News-Eintrag hinzufügen</h2>
+<?php echo $this->form; ?>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#birth').datepicker(
+		{ dateFormat: "yy-mm-dd" }
+	);
+	$('#arrive').datepicker(
+		{ dateFormat: "yy-mm-dd" }
+	);
+	$('#adopted').datepicker(
+		{ dateFormat: "yy-mm-dd" }
+	);
+	$('#since').datepicker(
+		{ dateFormat: "yy-mm-dd" }
+	);
+});
+</script>

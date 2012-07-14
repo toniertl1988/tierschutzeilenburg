@@ -1,0 +1,26 @@
+<h2>Tiere verwalten</h2>
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Name</td>
+			<td>im Tierheim seit</td>
+			<td>Tierart</td>
+			<td>Bearbeiten</td>
+			<td>Löschen</td>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($this->paginator AS $one): ?>
+		<tr>
+			<td><?php echo $one['id']; ?>
+			<td><?php echo $one['name']; ?>
+			<td><?php echo $this->date($one['arrive']); ?>
+			<td><?php echo $one['species']; ?>
+			<td><a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'animals', 'action' => 'edit', 'id' => $one['id']), null, true); ?>">Klick</a></td>
+			<td><a class="delete" rel="Tier" href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'animals', 'action' => 'delete', 'id' => $one['id']), null, true); ?>">Klick</a></td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+<?php echo $this->paginationControl($this->paginator, 'Elastic', 'pagination.phtml'); ?>

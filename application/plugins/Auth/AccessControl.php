@@ -32,10 +32,10 @@ class Application_Plugin_Auth_AccessControl extends Zend_Controller_Plugin_Abstr
 				} else {
 					$storage = $this->_auth->getStorage();
 					// die gesamte Tabellenzeile in der Session speichern,
-					// wobei das Passwort unterdrückt wird
+					// wobei das Passwort unterdrueckt wird
 					$storage->write($authAdapter->getResultRowObject(null, 'password'));
 					// Last Login loggen
-					System_Model_User::logLastLogin($authAdapter->getResultRowObject(null, 'password'));
+					//System_Model_User::logLastLogin($authAdapter->getResultRowObject(null, 'password'));
 				}
 			}
 
