@@ -1,5 +1,5 @@
 <?php
-class System_Model_DbTable_StaticSites extends Zend_Db_Table_Abstract
+class System_Model_DbTable_StaticSites extends System_Model_DbTable_MainDbTable
 {
 	protected $_name = 'staticSites';
 	

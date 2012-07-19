@@ -1,1 +1,7 @@
 Guestbook - Index
+<pre>
+<?php foreach($this->paginator AS $one): ?>
+<?php var_dump($one); ?>
+<?php endforeach; ?>
+</pre>
+<?php echo $this->paginationControl($this->paginator, 'Elastic', 'pagination.phtml'); ?>

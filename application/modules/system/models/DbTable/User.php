@@ -1,5 +1,5 @@
 <?php
-class System_Model_DbTable_User extends Zend_Db_Table_Abstract
+class System_Model_DbTable_User extends System_Model_DbTable_MainDbTable
 {
 	protected $_name = 'user';
 	
