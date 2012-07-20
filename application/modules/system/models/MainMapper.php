@@ -24,7 +24,7 @@ class System_Model_MainMapper
 		if ($userJoin === true) {
 			$select = $this->_createUserJoin($select);
 		}
-		$select->where('id =?', $id);
+		$select->where('table.id = ?', $id);
 		$result = $this->_dbTable->fetchAll($select)->toArray();
 		return $result[0];
 	}
@@ -35,7 +35,7 @@ class System_Model_MainMapper
 		if ($userJoin === true) {
 			$select = $this->_createUserJoin($select);
 		}
-		$select->where($field . ' = ?', $value);
+		$select->where('table.' . $field . ' = ?', $value);
 		$result = $this->_dbTable->fetchAll($select)->toArray();
 		return $result[0];
 	}
