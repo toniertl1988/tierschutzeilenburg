@@ -3,7 +3,7 @@ class System_Model_MainMapper
 {
 	protected $_dbTable;
 	
-	public function fetchAll2Array($userJoin, $sort, $direction, $where)
+	public function fetchAll2Array($userJoin, $sort, $direction, $where, $limit)
 	{
 		$select = $this->_dbTable->select();
 		if ($userJoin === true) {
@@ -14,6 +14,9 @@ class System_Model_MainMapper
 		}
 		if ($where !== null) {
 			$select->where($where);
+		}
+		if ($limit !== null) {
+			$select->limit($limit);
 		}
 		return $this->_dbTable->fetchAll($select)->toArray();
 	}

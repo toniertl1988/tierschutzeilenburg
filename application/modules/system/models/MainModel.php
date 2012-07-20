@@ -3,9 +3,9 @@ class System_Model_MainModel
 {
 	protected $_mapper;
 	
-	public function fetchAll2Array($userJoin = false, $sort = null, $direction = null, $where = null)
+	public function fetchAll2Array($userJoin = false, $sort = null, $direction = null, $where = null, $limit = null)
 	{
-		return $this->_mapper->fetchAll2Array($userJoin, $sort, $direction, $where);
+		return $this->_mapper->fetchAll2Array($userJoin, $sort, $direction, $where, $limit);
 	}
 	
 	public function find($id, $userJoin)
