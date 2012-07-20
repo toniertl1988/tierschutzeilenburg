@@ -6,11 +6,8 @@ class System_Model_MainMapper
 	public function fetchAll2Array($userJoin, $sort, $direction, $where)
 	{
 		$select = $this->_dbTable->select();
-		$tableName = $this->_dbTable->getTableName();
 		if ($userJoin === true) {
-			$select->setIntegrityCheck(false)
-				   ->from(array('table' => $tableName))
-			       ->join(array('u' => 'user'), 'table.user_id = u.id', array('realname' => 'u.realname'));
+			$select = $this->_createUserJoin($select);
 		}
 		if ($sort !== null && $direction !== null) {
 			$select->order($sort . ' ' . $direction);
@@ -23,14 +20,22 @@ class System_Model_MainMapper
 	
 	public function find($id, $userJoin)
 	{
-		$select = $this->_dbTable->select()->where('id =?', $id);
+		$select = $this->_dbTable->select();
+		if ($userJoin === true) {
+			$select = $this->_createUserJoin($select);
+		}
+		$select->where('id =?', $id);
 		$result = $this->_dbTable->fetchAll($select)->toArray();
 		return $result[0];
 	}
 	
 	public function findByField($field, $value, $userJoin)
 	{
-		$select = $this->_dbTable->select()->where($field . ' = ?', $value);
+		$select = $this->_dbTable->select();
+		if ($userJoin === true) {
+			$select = $this->_createUserJoin($select);
+		}
+		$select->where($field . ' = ?', $value);
 		$result = $this->_dbTable->fetchAll($select)->toArray();
 		return $result[0];
 	}
@@ -58,5 +63,14 @@ class System_Model_MainMapper
 			return true;
 		}
 		return false;
+	}
+	
+	protected function _createUserJoin($select)
+	{
+		$tableName = $this->_dbTable->getTableName();
+		$select->setIntegrityCheck(false)
+			   ->from(array('table' => $tableName))
+		       ->join(array('u' => 'user'), 'table.user_id = u.id', array('realname' => 'u.realname'));
+		return $select;
 	}
 }
